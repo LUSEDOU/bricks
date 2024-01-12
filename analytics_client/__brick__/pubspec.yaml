@@ -1,0 +1,16 @@
+name: {{name.snakeCase()}}_analytics_client
+description: A {{name.titleCase()}} implementation of the analytics client.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  analytics_client:
+    path: {{path_to_client.value}}
+  equatable: ^2.0.5
+
+dev_dependencies:
+  mocktail: ^1.0.0
+  very_good_analysis: ^5.1.0

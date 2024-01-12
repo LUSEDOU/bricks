@@ -1,3 +1,7 @@
 bricks:
   client:
     path: client
+  analytics_client:
+    path: analytics_client
+  analytics_client_interface:
+    path: analytics_client_interface
