@@ -1,5 +1,5 @@
 import 'package:analytics_client/analytics_client.dart';
-import 'package:{{package.snakeCase()}}/{{package.snakeCase()}}.dart'
+import 'package:{{package.snakeCase()}}/{{package.snakeCase()}}.dart';
 
 /// {@template {{name.snakeCase()}}_analytics_client}
 /// A {{name.titleCase()}} implementation of the [AnalyticsClient] interface.
@@ -24,7 +24,7 @@ class {{name.pascalCase()}}AnalyticsClient implements AnalyticsClient {
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(TrackEventFailure(error), stackTrace);
     }
-  };
+  }
 
   /// Sets the user identifier.
   ///
@@ -38,7 +38,7 @@ class {{name.pascalCase()}}AnalyticsClient implements AnalyticsClient {
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(SetUserIdFailure(error), stackTrace);
     }
-  };
+  }
 
   /// Sets the user properties.
   ///
@@ -53,7 +53,7 @@ class {{name.pascalCase()}}AnalyticsClient implements AnalyticsClient {
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(SetUserPropertiesFailure(error), stackTrace);
     }
-  };
+  }
 
   /// Tracks a screen view.
   ///
@@ -67,5 +67,5 @@ class {{name.pascalCase()}}AnalyticsClient implements AnalyticsClient {
     } catch (error, stackTrace) {
       Error.throwWithStackTrace(ScreenViewFailure(error), stackTrace);
     }
-  };
+  }
 }
