@@ -1,0 +1,18 @@
+name: analytics_client_package
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.51 <0.1.0"
+
+vars:
+  client:
+    type: enum
+    description: The client to use for analytics.
+    default: firebase
+    prompt: Which analytics client would you like to use?
+    values:
+      - firebase
+      - custom
+
