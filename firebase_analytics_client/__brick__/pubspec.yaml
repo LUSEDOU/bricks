@@ -1,0 +1,18 @@
+name: firebase_analytics_client
+description: A Firebase implementation of the analytics client.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  analytics_client:
+    path: {{{path}}}
+  equatable: ^2.0.5
+  firebase_analytics: ^9.1.11
+  test: ^1.25.1
+
+dev_dependencies:
+  mocktail: ^1.0.0
+  very_good_analysis: ^5.1.0

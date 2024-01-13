@@ -1,7 +1,11 @@
 bricks:
   client:
     path: client
-  analytics_client:
-    path: analytics_client
   analytics_client_interface:
     path: analytics_client_interface
+  firebase_analytics_client:
+    path: firebase_analytics_client
+  analytics_client:
+    path: analytics_client
+  analytics_client_package:
+    path: analytics_client_package
