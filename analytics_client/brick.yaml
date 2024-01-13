@@ -25,7 +25,7 @@ vars:
   version:
     type: string
     description: Package version
-    default: 10.0.3
+    default: ^9.1.11
     prompt: What is the package version?
   path_to_client:
     type: string

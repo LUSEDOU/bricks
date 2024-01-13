@@ -8,9 +8,13 @@ environment:
 
 dependencies:
   analytics_client:
-    path: {{path_to_client.value}}
+    path: {{{path_to_client}}}
   equatable: ^2.0.5
+  {{#use_flutter}}flutter:
+    sdk: flutter{{/use_flutter}}{{package.snakeCase()}}: {{{version}}}
 
 dev_dependencies:
+  {{#use_flutter}}flutter_test:
+    sdk: flutter{{/use_flutter}}{{^use_flutter}}test: ^1.25.1{{/use_flutter}}
   mocktail: ^1.0.0
   very_good_analysis: ^5.1.0
