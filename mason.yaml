@@ -9,3 +9,5 @@ bricks:
     path: analytics_client
   analytics_client_package:
     path: analytics_client_package
+  bloc:
+    path: bloc
