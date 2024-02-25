@@ -3,13 +3,13 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_news_example_api/client.dart';
 import 'package:storage/storage.dart';
 
-part 'article_storage.dart';
+part '{{name.snakeCase()}}_storage.dart';
 
-/// {@template article_failure}
-/// A base failure for the article repository failures.
+/// {@template {{name.snakeCase()}}_failure}
+/// A base failure for the {{name.snakeCase()}} repository failures.
 /// {@endtemplate}
 abstract class {{name.pascalCase()}}Failure with EquatableMixin implements Exception {
-  /// {@macro article_failure}
+  /// {@macro {{name.snakeCase()}}_failure}
   const {{name.pascalCase()}}Failure(this.error);
 
   /// The error which was caught.
@@ -19,87 +19,87 @@ abstract class {{name.pascalCase()}}Failure with EquatableMixin implements Excep
   List<Object> get props => [error];
 }
 
-/// {@template get_article_failure}
-/// Thrown when fetching an article fails.
+/// {@template get_{{name.snakeCase()}}_failure}
+/// Thrown when fetching an {{name.snakeCase()}} fails.
 /// {@endtemplate}
 class Get{{name.pascalCase()}}Failure extends {{name.pascalCase()}}Failure {
-  /// {@macro get_article_failure}
+  /// {@macro get_{{name.snakeCase()}}_failure}
   const Get{{name.pascalCase()}}Failure(super.error);
 }
 
-/// {@template get_related_articles_failure}
-/// Thrown when fetching related articles fails.
+/// {@template get_related_{{name.snakeCase()}}s_failure}
+/// Thrown when fetching related {{name.snakeCase()}}s fails.
 /// {@endtemplate}
 class GetRelated{{name.pascalCase()}}sFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro get_related_articles_failure}
+  /// {@macro get_related_{{name.snakeCase()}}s_failure}
   const GetRelated{{name.pascalCase()}}sFailure(super.error);
 }
 
-/// {@template increment_article_views_failure}
-/// Thrown when incrementing article views fails.
+/// {@template increment_{{name.snakeCase()}}_views_failure}
+/// Thrown when incrementing {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class Increment{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro increment_article_views_failure}
+  /// {@macro increment_{{name.snakeCase()}}_views_failure}
   const Increment{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template decrement_article_views_failure}
-/// Thrown when decrementing article views fails.
+/// {@template decrement_{{name.snakeCase()}}_views_failure}
+/// Thrown when decrementing {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class Decrement{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro decrement_article_views_failure}
+  /// {@macro decrement_{{name.snakeCase()}}_views_failure}
   const Decrement{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template reset_article_views_failure}
-/// Thrown when resetting article views fails.
+/// {@template reset_{{name.snakeCase()}}_views_failure}
+/// Thrown when resetting {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class Reset{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro reset_article_views_failure}
+  /// {@macro reset_{{name.snakeCase()}}_views_failure}
   const Reset{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template fetch_article_views_failure}
-/// Thrown when fetching article views fails.
+/// {@template fetch_{{name.snakeCase()}}_views_failure}
+/// Thrown when fetching {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class Fetch{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro fetch_article_views_failure}
+  /// {@macro fetch_{{name.snakeCase()}}_views_failure}
   const Fetch{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template increment_total_article_views_failure}
-/// Thrown when incrementing total article views fails.
+/// {@template increment_total_{{name.snakeCase()}}_views_failure}
+/// Thrown when incrementing total {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class IncrementTotal{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro increment_total_article_views_failure}
+  /// {@macro increment_total_{{name.snakeCase()}}_views_failure}
   const IncrementTotal{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template fetch_total_article_views_failure}
-/// Thrown when fetching total article views fails.
+/// {@template fetch_total_{{name.snakeCase()}}_views_failure}
+/// Thrown when fetching total {{name.snakeCase()}} views fails.
 /// {@endtemplate}
 class FetchTotal{{name.pascalCase()}}ViewsFailure extends {{name.pascalCase()}}Failure {
-  /// {@macro fetch_total_article_views_failure}
+  /// {@macro fetch_total_{{name.snakeCase()}}_views_failure}
   const FetchTotal{{name.pascalCase()}}ViewsFailure(super.error);
 }
 
-/// {@template article_views}
-/// Represents the number of article views and the date
-/// when the number of article views was last reset.
+/// {@template {{name.snakeCase()}}_views}
+/// Represents the number of {{name.snakeCase()}} views and the date
+/// when the number of {{name.snakeCase()}} views was last reset.
 /// {@endtemplate}
 class {{name.pascalCase()}}Views {
-  /// {@macro article_views}
+  /// {@macro {{name.snakeCase()}}_views}
   {{name.pascalCase()}}Views(this.views, this.resetAt);
 
-  /// The number of article views.
+  /// The number of {{name.snakeCase()}} views.
   final int views;
 
-  /// The date when the number of article views was last reset.
+  /// The date when the number of {{name.snakeCase()}} views was last reset.
   final DateTime? resetAt;
 }
 
 /// {@template {name.snakeCase()}_repository}
-/// A repository that manages article data.
+/// A repository that manages {{name.snakeCase()}} data.
 /// {@endtemplate}
 class {name.pascalCase()}Repository {
   /// {@macro {name.snakeCase()}_repository}
@@ -112,14 +112,14 @@ class {name.pascalCase()}Repository {
   final FlutterNewsExampleApiClient _apiClient;
   final {{name.pascalCase()}}Storage _storage;
 
-  /// Requests article content metadata.
+  /// Requests {{name.snakeCase()}} content metadata.
   ///
   /// Supported parameters:
   /// * [id] - {{name.pascalCase()}} id for which content is requested.
   /// * [limit] - The number of results to return.
   /// * [offset] - The (zero-based) offset of the first item
   /// in the collection to return.
-  /// * [preview] - Whether to return a preview of the article.
+  /// * [preview] - Whether to return a preview of the {{name.snakeCase()}}.
   Future<{{name.pascalCase()}}Response> get{{name.pascalCase()}}({
     required String id,
     int? limit,
@@ -138,7 +138,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Requests related articles.
+  /// Requests related {{name.snakeCase()}}s.
   ///
   /// Supported parameters:
   /// * [id] - {{name.pascalCase()}} id for which related content is requested.
@@ -161,7 +161,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Increments the number of article views by 1.
+  /// Increments the number of {{name.snakeCase()}} views by 1.
   Future<void> increment{{name.pascalCase()}}Views() async {
     try {
       final current{{name.pascalCase()}}Views = await _storage.fetch{{name.pascalCase()}}Views();
@@ -174,7 +174,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Decrements the number of article views by 1.
+  /// Decrements the number of {{name.snakeCase()}} views by 1.
   Future<void> decrement{{name.pascalCase()}}Views() async {
     try {
       final current{{name.pascalCase()}}Views = await _storage.fetch{{name.pascalCase()}}Views();
@@ -187,7 +187,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Resets the number of article views.
+  /// Resets the number of {{name.snakeCase()}} views.
   Future<void> reset{{name.pascalCase()}}Views() async {
     try {
       await Future.wait([
@@ -202,7 +202,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Fetches the number of article views.
+  /// Fetches the number of {{name.snakeCase()}} views.
   Future<{{name.pascalCase()}}Views> fetch{{name.pascalCase()}}Views() async {
     try {
       late int views;
@@ -220,7 +220,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Increments the number of total article views by 1.
+  /// Increments the number of total {{name.snakeCase()}} views by 1.
   Future<void> incrementTotal{{name.pascalCase()}}Views() async {
     try {
       final total{{name.pascalCase()}}Views = await _storage.fetchTotal{{name.pascalCase()}}Views();
@@ -233,7 +233,7 @@ class {name.pascalCase()}Repository {
     }
   }
 
-  /// Fetches the number of total article views.
+  /// Fetches the number of total {{name.snakeCase()}} views.
   Future<int> fetchTotal{{name.pascalCase()}}Views() async {
     try {
       return await _storage.fetchTotal{{name.pascalCase()}}Views();

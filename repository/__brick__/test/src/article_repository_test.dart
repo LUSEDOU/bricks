@@ -37,7 +37,7 @@ void main() {
           TextParagraphBlock(text: 'text'),
         ];
 
-        final articleResponse = {{name.pascalCase()}}Response(
+        final {{name.snakeCase()}}Response = {{name.pascalCase()}}Response(
           title: 'title',
           content: content,
           totalCount: content.length,
@@ -53,7 +53,7 @@ void main() {
             limit: any(named: 'limit'),
             preview: any(named: 'preview'),
           ),
-        ).thenAnswer((_) async => articleResponse);
+        ).thenAnswer((_) async => {{name.snakeCase()}}Response);
 
         expect(
           {name.camelCase()}Repository.get{{name.pascalCase()}}(
@@ -61,7 +61,7 @@ void main() {
             offset: 10,
             limit: 20,
           ),
-          completion(equals(articleResponse)),
+          completion(equals({{name.snakeCase()}}Response)),
         );
 
         verify(
@@ -133,7 +133,7 @@ void main() {
     group('increment{{name.pascalCase()}}Views', () {
       test(
           'calls {{name.pascalCase()}}Storage.set{{name.pascalCase()}}Views '
-          'with current article views increased by 1', () async {
+          'with current {{name.snakeCase()}} views increased by 1', () async {
         const current{{name.pascalCase()}}Views = 3;
         when(storage.fetch{{name.pascalCase()}}Views)
             .thenAnswer((_) async => current{{name.pascalCase()}}Views);
@@ -147,7 +147,7 @@ void main() {
 
       test(
           'throws an Increment{{name.pascalCase()}}ViewsFailure '
-          'when incrementing article views fails', () async {
+          'when incrementing {{name.snakeCase()}} views fails', () async {
         when(() => storage.set{{name.pascalCase()}}Views(any())).thenThrow(Exception());
 
         expect(
@@ -160,7 +160,7 @@ void main() {
     group('decrement{{name.pascalCase()}}Views', () {
       test(
           'calls {{name.pascalCase()}}Storage.set{{name.pascalCase()}}Views '
-          'with current article views decreased by 1', () async {
+          'with current {{name.snakeCase()}} views decreased by 1', () async {
         const current{{name.pascalCase()}}Views = 3;
         when(storage.fetch{{name.pascalCase()}}Views)
             .thenAnswer((_) async => current{{name.pascalCase()}}Views);
@@ -174,7 +174,7 @@ void main() {
 
       test(
           'throws a Decrement{{name.pascalCase()}}ViewsFailure '
-          'when decrementing article views fails', () async {
+          'when decrementing {{name.snakeCase()}} views fails', () async {
         when(() => storage.set{{name.pascalCase()}}Views(any())).thenThrow(Exception());
 
         expect(
@@ -187,7 +187,7 @@ void main() {
     group('reset{{name.pascalCase()}}Views', () {
       test(
           'calls {{name.pascalCase()}}Storage.set{{name.pascalCase()}}Views '
-          'with 0 article views', () async {
+          'with 0 {{name.snakeCase()}} views', () async {
         await {name.camelCase()}Repository.reset{{name.pascalCase()}}Views();
         verify(() => storage.set{{name.pascalCase()}}Views(0)).called(1);
       });
@@ -204,7 +204,7 @@ void main() {
 
       test(
           'throws a Reset{{name.pascalCase()}}ViewsFailure '
-          'when resetting article views fails', () async {
+          'when resetting {{name.snakeCase()}} views fails', () async {
         when(() => storage.set{{name.pascalCase()}}Views(any())).thenThrow(Exception());
 
         expect(
@@ -216,7 +216,7 @@ void main() {
 
     group('fetch{{name.pascalCase()}}Views', () {
       test(
-          'returns the number of article views '
+          'returns the number of {{name.snakeCase()}} views '
           'from {{name.pascalCase()}}Storage.fetch{{name.pascalCase()}}Views', () async {
         const current{{name.pascalCase()}}Views = 3;
         when(storage.fetch{{name.pascalCase()}}Views)
@@ -227,7 +227,7 @@ void main() {
       });
 
       test(
-          'returns the reset date of the number of article views '
+          'returns the reset date of the number of {{name.snakeCase()}} views '
           'from {{name.pascalCase()}}Storage.fetch{{name.pascalCase()}}ViewsResetDate', () async {
         final resetDate = DateTime(2022, 6, 7);
         when(storage.fetch{{name.pascalCase()}}Views).thenAnswer((_) async => 0);
@@ -239,7 +239,7 @@ void main() {
 
       test(
           'throws a Fetch{{name.pascalCase()}}ViewsFailure '
-          'when fetching article views fails', () async {
+          'when fetching {{name.snakeCase()}} views fails', () async {
         when(storage.fetch{{name.pascalCase()}}Views).thenThrow(Exception());
 
         expect(
@@ -292,7 +292,7 @@ void main() {
     group('incrementTotal{{name.pascalCase()}}Views', () {
       test(
           'calls UserStorage.setTotal{{name.pascalCase()}}Views '
-          'with current total article views increased by 1', () async {
+          'with current total {{name.snakeCase()}} views increased by 1', () async {
         const total{{name.pascalCase()}}Views = 3;
         when(storage.fetchTotal{{name.pascalCase()}}Views)
             .thenAnswer((_) async => total{{name.pascalCase()}}Views);
@@ -309,7 +309,7 @@ void main() {
 
       test(
           'throws an IncrementTotal{{name.pascalCase()}}ViewsFailure '
-          'when incrementing total article views fails', () async {
+          'when incrementing total {{name.snakeCase()}} views fails', () async {
         when(() => storage.setTotal{{name.pascalCase()}}Views(any())).thenThrow(Exception());
 
         expect(
@@ -321,7 +321,7 @@ void main() {
 
     group('fetchTotal{{name.pascalCase()}}Views', () {
       test(
-          'returns the number of total article views '
+          'returns the number of total {{name.snakeCase()}} views '
           'from UserStorage.fetchTotal{{name.pascalCase()}}Views', () async {
         const current{{name.pascalCase()}}Views = 3;
         when(storage.fetchTotal{{name.pascalCase()}}Views)
@@ -332,7 +332,7 @@ void main() {
 
       test(
           'throws a FetchTotal{{name.pascalCase()}}ViewsFailure '
-          'when fetching total article views fails', () async {
+          'when fetching total {{name.snakeCase()}} views fails', () async {
         when(storage.fetchTotal{{name.pascalCase()}}Views).thenThrow(Exception());
 
         expect(

@@ -28,7 +28,7 @@ void main() {
 
         verify(
           () => storage.write(
-            key: {{name.pascalCase()}}StorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}Views,
             value: views.toString(),
           ),
         ).called(1);
@@ -38,7 +38,7 @@ void main() {
     group('fetch{{name.pascalCase()}}Views', () {
       test('returns the value from Storage', () async {
         when(
-          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}Views),
         ).thenAnswer((_) async => '3');
 
         final result =
@@ -46,7 +46,7 @@ void main() {
 
         verify(
           () => storage.read(
-            key: {{name.pascalCase()}}StorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}Views,
           ),
         ).called(1);
 
@@ -55,7 +55,7 @@ void main() {
 
       test('returns 0 when no value exists in Storage', () async {
         when(
-          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}Views),
         ).thenAnswer((_) async => null);
 
         final result =
@@ -63,7 +63,7 @@ void main() {
 
         verify(
           () => storage.read(
-            key: {{name.pascalCase()}}StorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}Views,
           ),
         ).called(1);
 
@@ -79,7 +79,7 @@ void main() {
 
         verify(
           () => storage.write(
-            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}ViewsResetAt,
             value: date.toIso8601String(),
           ),
         ).called(1);
@@ -91,7 +91,7 @@ void main() {
         final date = DateTime(2022, 6, 7);
 
         when(
-          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}ViewsResetAt),
         ).thenAnswer((_) async => date.toIso8601String());
 
         final result =
@@ -99,7 +99,7 @@ void main() {
 
         verify(
           () => storage.read(
-            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}ViewsResetAt,
           ),
         ).called(1);
 
@@ -108,7 +108,7 @@ void main() {
 
       test('returns null when no value exists in Storage', () async {
         when(
-          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}ViewsResetAt),
         ).thenAnswer((_) async => null);
 
         final result =
@@ -116,7 +116,7 @@ void main() {
 
         verify(
           () => storage.read(
-            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.{{name.snakeCase()}}ViewsResetAt,
           ),
         ).called(1);
 

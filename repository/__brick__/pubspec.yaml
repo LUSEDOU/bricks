@@ -1,5 +1,5 @@
 name: {name.snakeCase()}_repository
-description: A repository that manages article data.
+description: A repository that manages {{name.snakeCase()}} data.
 version: 1.0.0+1
 publish_to: none
 
