@@ -1,2 +1,3 @@
 mason-lock.json
 .mason
+test/*
