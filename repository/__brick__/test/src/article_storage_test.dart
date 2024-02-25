@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 class MockStorage extends Mock implements Storage {}
 
 void main() {
-  group('ArticleStorage', () {
+  group('{{name.pascalCase()}}Storage', () {
     late Storage storage;
 
     setUp(() {
@@ -20,33 +20,33 @@ void main() {
       ).thenAnswer((_) async {});
     });
 
-    group('setArticleViews', () {
+    group('set{{name.pascalCase()}}Views', () {
       test('saves the value in Storage', () async {
         const views = 3;
 
-        await ArticleStorage(storage: storage).setArticleViews(views);
+        await {{name.pascalCase()}}Storage(storage: storage).set{{name.pascalCase()}}Views(views);
 
         verify(
           () => storage.write(
-            key: ArticleStorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.articleViews,
             value: views.toString(),
           ),
         ).called(1);
       });
     });
 
-    group('fetchArticleViews', () {
+    group('fetch{{name.pascalCase()}}Views', () {
       test('returns the value from Storage', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.articleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViews),
         ).thenAnswer((_) async => '3');
 
         final result =
-            await ArticleStorage(storage: storage).fetchArticleViews();
+            await {{name.pascalCase()}}Storage(storage: storage).fetch{{name.pascalCase()}}Views();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.articleViews,
           ),
         ).called(1);
 
@@ -55,15 +55,15 @@ void main() {
 
       test('returns 0 when no value exists in Storage', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.articleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViews),
         ).thenAnswer((_) async => null);
 
         final result =
-            await ArticleStorage(storage: storage).fetchArticleViews();
+            await {{name.pascalCase()}}Storage(storage: storage).fetch{{name.pascalCase()}}Views();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.articleViews,
+            key: {{name.pascalCase()}}StorageKeys.articleViews,
           ),
         ).called(1);
 
@@ -71,35 +71,35 @@ void main() {
       });
     });
 
-    group('setArticleViewsResetDate', () {
+    group('set{{name.pascalCase()}}ViewsResetDate', () {
       test('saves the value in Storage', () async {
         final date = DateTime(2022, 6, 7);
 
-        await ArticleStorage(storage: storage).setArticleViewsResetDate(date);
+        await {{name.pascalCase()}}Storage(storage: storage).set{{name.pascalCase()}}ViewsResetDate(date);
 
         verify(
           () => storage.write(
-            key: ArticleStorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
             value: date.toIso8601String(),
           ),
         ).called(1);
       });
     });
 
-    group('fetchArticleViewsResetDate', () {
+    group('fetch{{name.pascalCase()}}ViewsResetDate', () {
       test('returns the value from Storage', () async {
         final date = DateTime(2022, 6, 7);
 
         when(
-          () => storage.read(key: ArticleStorageKeys.articleViewsResetAt),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt),
         ).thenAnswer((_) async => date.toIso8601String());
 
         final result =
-            await ArticleStorage(storage: storage).fetchArticleViewsResetDate();
+            await {{name.pascalCase()}}Storage(storage: storage).fetch{{name.pascalCase()}}ViewsResetDate();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
           ),
         ).called(1);
 
@@ -108,15 +108,15 @@ void main() {
 
       test('returns null when no value exists in Storage', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.articleViewsResetAt),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt),
         ).thenAnswer((_) async => null);
 
         final result =
-            await ArticleStorage(storage: storage).fetchArticleViewsResetDate();
+            await {{name.pascalCase()}}Storage(storage: storage).fetch{{name.pascalCase()}}ViewsResetDate();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.articleViewsResetAt,
+            key: {{name.pascalCase()}}StorageKeys.articleViewsResetAt,
           ),
         ).called(1);
 
@@ -124,33 +124,33 @@ void main() {
       });
     });
 
-    group('setTotalArticleViews', () {
+    group('setTotal{{name.pascalCase()}}Views', () {
       test('saves the value in Storage', () async {
         const views = 3;
 
-        await ArticleStorage(storage: storage).setTotalArticleViews(views);
+        await {{name.pascalCase()}}Storage(storage: storage).setTotal{{name.pascalCase()}}Views(views);
 
         verify(
           () => storage.write(
-            key: ArticleStorageKeys.totalArticleViews,
+            key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views,
             value: views.toString(),
           ),
         ).called(1);
       });
     });
 
-    group('fetchTotalArticleViews', () {
+    group('fetchTotal{{name.pascalCase()}}Views', () {
       test('returns the value from Storage', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.totalArticleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views),
         ).thenAnswer((_) async => '3');
 
         final result =
-            await ArticleStorage(storage: storage).fetchTotalArticleViews();
+            await {{name.pascalCase()}}Storage(storage: storage).fetchTotal{{name.pascalCase()}}Views();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.totalArticleViews,
+            key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views,
           ),
         ).called(1);
 
@@ -159,15 +159,15 @@ void main() {
 
       test('returns 0 when no value exists in Storage', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.totalArticleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views),
         ).thenAnswer((_) async => null);
 
         final result =
-            await ArticleStorage(storage: storage).fetchTotalArticleViews();
+            await {{name.pascalCase()}}Storage(storage: storage).fetchTotal{{name.pascalCase()}}Views();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.totalArticleViews,
+            key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views,
           ),
         ).called(1);
 
@@ -176,15 +176,15 @@ void main() {
 
       test('returns 0 when stored value is malformed', () async {
         when(
-          () => storage.read(key: ArticleStorageKeys.totalArticleViews),
+          () => storage.read(key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views),
         ).thenAnswer((_) async => 'malformed');
 
         final result =
-            await ArticleStorage(storage: storage).fetchTotalArticleViews();
+            await {{name.pascalCase()}}Storage(storage: storage).fetchTotal{{name.pascalCase()}}Views();
 
         verify(
           () => storage.read(
-            key: ArticleStorageKeys.totalArticleViews,
+            key: {{name.pascalCase()}}StorageKeys.total{{name.pascalCase()}}Views,
           ),
         ).called(1);
 
