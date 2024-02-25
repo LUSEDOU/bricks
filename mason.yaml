@@ -11,3 +11,5 @@ bricks:
     path: analytics_client_package
   bloc:
     path: bloc
+  repository:
+    path: repository
