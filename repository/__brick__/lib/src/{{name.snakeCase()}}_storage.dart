@@ -4,7 +4,7 @@ part of '{name.snakeCase()}_repository.dart';
 abstract class {{name.pascalCase()}}StorageKeys {}
 
 /// {@template {{name.snakeCase()}}_storage}
-/// Storage for the [{name.pascalCase()}Repository].
+/// Storage for the [{{name.pascalCase()}}Repository].
 /// {@endtemplate}
 class {{name.pascalCase()}}Storage {
   /// {@macro {{name.snakeCase()}}_storage}

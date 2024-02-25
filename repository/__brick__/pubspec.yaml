@@ -1,4 +1,4 @@
-name: {name.snakeCase()}_repository
+name: {{name.snakeCase()}}_repository
 description: A repository that manages {{name.lowerCase()}} data.
 version: 1.0.0+1
 publish_to: none

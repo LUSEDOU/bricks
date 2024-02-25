@@ -1,4 +1,4 @@
-import 'package:{name.snakeCase()}_repository/{name.snakeCase()}_repository.dart';
+import 'package:{{name.snakeCase()}}_repository/{{name.snakeCase()}}_repository.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:storage/storage.dart';
 import 'package:test/test.dart';
