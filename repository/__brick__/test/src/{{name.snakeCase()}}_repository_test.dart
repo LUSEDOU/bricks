@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 class Mock{{name.pascalCase()}}Storage extends Mock implements {{name.pascalCase()}}Storage {}
 
 void main() {
-  group('{name.pascalCase()}Repository', () {
+  group('{{name.pascalCase()}}Repository', () {
     late {{name.pascalCase()}}Storage storage;
     late {{name.pascalCase()}}Repository {name.camelCase()}Repository;
 

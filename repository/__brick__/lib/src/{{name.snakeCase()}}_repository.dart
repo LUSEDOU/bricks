@@ -4,7 +4,7 @@ import 'package:storage/storage.dart';
 part '{{name.snakeCase()}}_failure.dart';
 part '{{name.snakeCase()}}_storage.dart';
 
-/// {@template {name.snakeCase()}_repository}
+/// {@template {{name.snakeCase()}}_repository}
 /// A repository that manages {{name.lowerCase()}} data.
 /// {@endtemplate}
 class {{name.pascalCase()}}Repository {

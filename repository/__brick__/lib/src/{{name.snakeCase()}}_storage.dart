@@ -1,4 +1,4 @@
-part of '{name.snakeCase()}_repository.dart';
+part of '{{name.snakeCase()}}_repository.dart';
 
 /// Storage keys for the [{{name.pascalCase()}}Storage].
 abstract class {{name.pascalCase()}}StorageKeys {}
