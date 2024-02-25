@@ -1,5 +1,5 @@
 name: {name.snakeCase()}_repository
-description: A repository that manages {{name.snakeCase()}} data.
+description: A repository that manages {{name.lowerCase()}} data.
 version: 1.0.0+1
 publish_to: none
 
@@ -9,8 +9,6 @@ environment:
 dependencies:
   clock: ^1.1.0
   equatable: ^2.0.3
-  flutter_news_example_api:
-    path: ../../api
   storage:
     path: ../storage/storage
 
